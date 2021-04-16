@@ -19,32 +19,32 @@
     <main class="container">
       <section class="balance">
         <h2 class="sr-only">Balanço</h2>
-        <div class="card">
+        <div class="card bluCard">
           <h3>
             <span> Entradas </span>
             <img src="./src/income.svg" alt="Entradas de dinheiro" />
           </h3>
-          <p>R$: 5.000,00</p>
+          <p id="income-display">R$: 5.000,00</p>
         </div>
-        <div class="card red">
+        <div class="card redCard">
           <h3>
             <span> Saídas </span>
             <img src="./src/decrease.svg" alt="Saídas de dinheiro" />
           </h3>
-          <p>R$: 5.000,00</p>
+          <p id="expense-display">R$: 5.000,00</p>
         </div>
         <div class="card green">
           <h3>
             <span> Total </span>
             <img src="./src/wallet.svg" alt="Dinheiro na sua carteira" />
           </h3>
-          <p>R$: 3.000,00</p>
+          <p id="total-display">R$: 3.000,00</p>
         </div>
       </section>
 
       <section class="transactions">
         <h2 class="sr-only">Transações</h2>
-        <a href="#" class="button new" onclick="Modal.open()"
+        <a href="#" class="button new openx" onclick="Modal.open()"
           >+ Nova transação</a
         >
         <table class="data-table">
@@ -56,62 +56,7 @@
               <th></th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td class="description">Luz</td>
-              <td class="expense">R$: 500,00</td>
-              <td class="date">23/01/2021</td>
-              <td>
-                <img
-                  src="./src//negative.png"
-                  alt="Botão para apagar a transação"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td class="description">Criação web</td>
-              <td class="income">R$: 500,00</td>
-              <td class="date">23/01/2021</td>
-              <td>
-                <img
-                  src="./src//negative.png"
-                  alt="Botão para apagar a transação"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td class="description">Aluguel</td>
-              <td class="expense">R$: 500,00</td>
-              <td class="date">23/01/2021</td>
-              <td>
-                <img
-                  src="./src//negative.png"
-                  alt="Botão para apagar a transação"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td class="description">Criação web</td>
-              <td class="income">R$: 500,00</td>
-              <td class="date">23/01/2021</td>
-              <td>
-                <img
-                  src="./src//negative.png"
-                  alt="Botão para apagar a transação"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td class="description">Aluguel</td>
-              <td class="expense">R$: 500,00</td>
-              <td class="date">23/01/2021</td>
-              <td>
-                <img
-                  src="./src//negative.png"
-                  alt="Botão para apagar a transação"
-                />
-              </td>
-            </tr>
+          <tbody id="data-table-tbody">
           </tbody>
         </table>
       </section>
@@ -150,7 +95,9 @@
               <input type="date" id="date" name="data" />
             </div>
             <div class="input-group actions">
-              <a href="#" class="button cancel" onclick="Modal.close()">Cancelar</a>
+              <a href="#" class="button cancel" onclick="Modal.close()"
+                >Cancelar</a
+              >
               <button>Salvar</button>
             </div>
           </form>

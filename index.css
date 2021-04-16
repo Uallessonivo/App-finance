@@ -78,6 +78,10 @@ button:hover {
   visibility: hidden;
 }
 
+.deletar {
+  cursor: pointer;
+}
+
 .modal-overlay.active {
   opacity: 1;
   visibility: visible;
@@ -193,6 +197,16 @@ a:hover {
   margin-top: 1rem;
 }
 
+.redCard {
+  background-color: rgb(165, 53, 53);
+  color: white;
+}
+
+.bluCard {
+  background-color: rgb(53, 158, 165);
+  color: white;
+}
+
 .card h3 {
   font-weight: normal;
   font-size: 1rem;
@@ -207,7 +221,7 @@ a:hover {
 
 .green {
   color: white;
-  background-color: rgb(20, 143, 86);
+  background-color: rgb(16, 117, 70);
 }
 
 .data-table {
