@@ -9,36 +9,21 @@ const Modal = {
   },
 };
 
-const transactions = [
-  {
-    description: "Luz",
-    amount: -50000,
-    date: "23/01/2021",
+const Storage = {
+  get() {
+    return JSON.parse(localStorage.getItem("app.finances:transactions")) || [];
   },
-  {
-    description: "Agua",
-    amount: -10000,
-    date: "23-01-2021",
+
+  set(transactions) {
+    localStorage.setItem(
+      "app.finances:transactions",
+      JSON.stringify(transactions)
+    );
   },
-  {
-    description: "Internet",
-    amount: -50000,
-    date: "23/01/2021",
-  },
-  {
-    description: "Criação",
-    amount: 500001,
-    date: "23/01/2021",
-  },
-  {
-    description: "Job",
-    amount: 50000,
-    date: "23/01/2021",
-  },
-];
+};
 
 const Transactions = {
-  all: transactions,
+  all: Storage.get(),
 
   add(transactions) {
     Transactions.all.push(transactions);
@@ -55,7 +40,7 @@ const Transactions = {
   },
   remove(index) {
     Transactions.all.splice(index, 1);
-    App.realod();
+    App.reload();
   },
   expenses() {
     let expense = 0;
@@ -102,9 +87,11 @@ const texts = {
     const tr = document.createElement("tr");
     tr.innerHTML = texts.innerHTMLTransaction(transaction, index);
     tr.dataset.index = index;
+
     texts.transactionsContainer.appendChild(tr);
   },
-  innerHTMLTransaction(transaction) {
+
+  innerHTMLTransaction(transaction, index) {
     const Css = transaction.amount > 0 ? "income" : "expense";
     const amount = Utils.formart(transaction.amount);
     const html = `
@@ -137,20 +124,6 @@ const texts = {
 
   clear() {
     texts.transactionsContainer.innerHTML = "";
-  },
-};
-
-const App = {
-  init() {
-    transactions.forEach(function (transaction, index) {
-      texts.addTransaction(transaction, index);
-    });
-    texts.updateBalance();
-  },
-
-  reload() {
-    texts.clear();
-    App.init();
   },
 };
 
@@ -210,6 +183,21 @@ const Form = {
     } catch (error) {
       alert(error.message);
     }
+  },
+};
+
+const App = {
+  init() {
+    Transactions.all.forEach(function (transaction, index) {
+      texts.addTransaction(transaction, index);
+    });
+    texts.updateBalance();
+    Storage.set(Transactions.all);
+  },
+
+  reload() {
+    texts.clear();
+    App.init();
   },
 };
 

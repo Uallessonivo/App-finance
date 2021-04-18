@@ -230,6 +230,10 @@ a:hover {
   border-spacing: 0 0.5rem;
 }
 
+td img {
+  cursor: pointer;
+}
+
 .transactions {
   display: block;
   width: 100%;
@@ -289,6 +293,6 @@ td.expense {
   }
 
   footer {
-    margin-top: 160px;
+    margin-top: 410px;
   }
 }
