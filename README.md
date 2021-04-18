@@ -1,7 +1,12 @@
 ## App-finance
 
-Este é apenas um site que estou usando para estudar HTML/CSS
-Desejo também adicionar as funcionalidades com o Javascript
+Este é apenas um site que estou usando para estudar
+
+Esse projeto foi desenvolvido com:
+
+- HTML
+- CSS
+- JavaScript
 
 ## https://appfinance.netlify.app/
 
