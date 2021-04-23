@@ -11,6 +11,5 @@ Esse projeto foi desenvolvido com:
 ## https://appfinance.netlify.app/
 
 <p align="center">
-  <img alt="App.finance" src="https://i.ibb.co/0yJgWyk/scrnli-23-04-2021-11-20-57.png" width="100%">
+  <img alt="App.finance" src="https://i.ibb.co/1q69SP1/Captura-de-tela-de-2021-04-18-07-42-02.png" width="100%">
 </p>
-
